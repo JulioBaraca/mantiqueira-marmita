@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #fffb00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+.corpo {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.funcionarios label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.funcionarios input[type="number"] {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+#camposFuncionarios {
+    margin-top: 20px;
+}
+
+.nome label,
+.tamanho h5 {
+    font-weight: bold;
+}
+
+.nome input[type="text"] {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.tamanho input[type="radio"] {
+    margin-right: 5px;
+}
+
+.setor select {
+    width: 102.1%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.localentrega select {
+    width: 102.1%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.botoes {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#enviar {
+    background-color: #fffb00;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#cancelar {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#enviar:hover  {
+    background-color: #3cff00;
+}
+
+#cancelar:hover {
+    background-color: #880808;
+}

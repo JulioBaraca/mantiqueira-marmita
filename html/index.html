@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt=Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marmitas</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="../imgs/adminportal_logo.png" alt="Logo da Empresa">
+    </div>
+
+    <div class="corpo">
+        <form id="marmita">
+            <div class="setor">
+                <label for="setor">Setor:</label>
+                <select name="setor1" id="setor1">
+                    <option value="balança">Balança</option>
+                    <option value="escritorio">Escritório</option>
+                    <option value="expedicao">Expedição</option>
+                    <option value="fabricaderacao">Fábrica de Ração</option>
+                    <option value="log">Logistica</option>
+                    <option value="packing">Packing</option>
+                    <option value="ti">TI</option>
+                </select>
+                <br><br>
+            </div>
+            <div class="funcionarios">
+                <label for="numFuncionarios">Número de Funcionários:</label>
+                <br>
+                <input type="number" name="numFuncionarios" id="numFuncionarios" min="1" value="1">
+            </div>
+            <br>
+            <div id="camposFuncionarios">
+                <!-- Os campos de nome e tamanho serão gerados dinamicamente aqui -->
+            </div>
+            <br>
+            <div class="localentrega">
+                <h5>Onde entregar?</h5>
+                <select name="entrega" id="entrega">
+                    <option value="escritorio-entrega">Escritório</option>
+                    <option value="fabricaderacao-entrega">Fábrica de ração</option>
+                    <option value="packingdeovos-entrega">Packing de Ovos</option>
+                    <option value="balança-entrega">Balança</option>
+                    <option value="expedicao-entrega">Expedição</option>
+                </select>
+            </div>
+            <br>
+            <div class="botoes">
+                <input type="button" value="Pedir!" id="enviar">
+                <input type="button" value="Cancelar" id="cancelar">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Ouvinte de evento para o campo "Número de Funcionários"
+        document.getElementById("numFuncionarios").addEventListener("input", function() {
+            const numFuncionarios = parseInt(this.value, 10);
+            const camposFuncionarios = document.getElementById("camposFuncionarios");
+
+            // Limpar os campos de funcionários anteriores
+            camposFuncionarios.innerHTML = "";
+
+            // Gerar campos de nome e tamanho para cada funcionário
+            for (let i = 1; i <= numFuncionarios; i++) {
+                const divFuncionario = document.createElement("div");
+                divFuncionario.innerHTML = `
+                    <br>
+                    <div class="nome">
+                        <label for="nomecompleto${i}">Nome completo do Funcionário ${i}:</label>
+                        <br>
+                        <input type="text" name="Nome${i}" id="nomecompleto${i}">
+                    </div>
+                    <br>
+                    <div class="tamanho">
+                        <h5>Tamanho para o Funcionário ${i}:</h5>
+                        <input type="radio" name="tamanho${i}" id="tamanhoP${i}" value="P">
+                        <label for="tamanhoP${i}">P</label>
+                        <input type="radio" name="tamanho${i}" id="tamanhoG${i}" value="G">
+                        <label for="tamanhoG${i}">G</label>
+                    </div>
+                    <br><br><br>
+                `;
+                camposFuncionarios.appendChild(divFuncionario);
+            }
+        });
+    </script>
+</body>
+</html>
